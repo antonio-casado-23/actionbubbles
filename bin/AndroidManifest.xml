@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="omtinez.routerremote"
-      android:versionName="1.6"
-      android:versionCode="10">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="17" />
+      package="antoniocasado.actionbubbles"
+      android:versionName="0.2"
+      android:versionCode="2">
 
-    <application android:icon="@drawable/icon"
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="18" />
+
+    <application android:name="ActionBubbles" 
+        		android:icon="@drawable/icon"
         		android:label="@string/app_name"
-        		android:theme="@style/Theme.Sherlock"
         		android:allowBackup="true">
         		
-        <activity android:name="LoginActivity"
+        <activity android:name="antoniocasado.actionbubbles.IntroActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="omtinez.routerremote.ListActivity" />
-        <activity android:name="omtinez.routerremote.MenuActivity" android:screenOrientation="portrait" />
-        <activity android:name="omtinez.routerremote.CustomActivity" />
-
+        
+        <activity android:name="antoniocasado.actionbubbles.GameActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name="antoniocasado.actionbubbles.ListActivity" />
+        <activity android:name="antoniocasado.actionbubbles.HighScoreActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        
+        <activity android:name="com.google.ads.AdActivity"
+              android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name="com.revmob.ads.fullscreen.FullscreenActivity"
+              android:theme="@android:style/Theme.Translucent"
+              android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <meta-data android:name="com.revmob.app.id" android:value="523dd4a5c4e72843b0000068"/>
     </application>
 </manifest>
